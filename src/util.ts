@@ -1,5 +1,3 @@
-import { dirname, resolve } from 'path';
-
 /*
 "baseUrl": ".",
 "outDir": "lib",
@@ -36,7 +34,6 @@ export const mapPaths = (
 
 export const loadConfig = (file: string): ITSConfig => {
   const {
-    extends: ext,
     compilerOptions: { baseUrl, outDir, paths } = {
       baseUrl: undefined,
       outDir: undefined,
@@ -53,14 +50,6 @@ export const loadConfig = (file: string): ITSConfig => {
   }
   if (paths) {
     config.paths = paths;
-  }
-
-  if (ext) {
-    const parentConfig = loadConfig(resolve(dirname(file), ext));
-    return {
-      ...parentConfig,
-      ...config,
-    };
   }
 
   return config;
