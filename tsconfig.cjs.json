@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "newLine": "lf",
     "allowJs": false,
     "allowSyntheticDefaultImports": false,
     "alwaysStrict": true,
